@@ -12,7 +12,7 @@ I have updated the entire plane, it now sports the following new features:
 
 For Flyers
 ----------
-Download the zip and extract it into your flightgear aircraft directory. Then rename the folder from `pa24-250 (master)` to `pa24-250`. You should be good to go!
+Download the zip and extract it into your flightgear aircraft directory. Then rename the folder from `pa24-250-master` to `pa24-250`. You should be good to go!
 
 Todo
 ----
