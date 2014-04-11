@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+
+ <path>CeilingPanel.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>housing</object-name>
+  <object-name>mapLightSwitch</object-name>
+  <object-name>cabinLightSwitch</object-name>
+  <object-name>sphere</object-name>
+  <object-name>trim-handle</object-name>
+  <object-name>trim-knob</object-name>
+  <emission>
+   <red>0.2</red>
+   <green>0.04</green>
+   <blue>0.00002</blue>
+   <factor-prop>sim/model/material/instruments/factor</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Instrument-light</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>0.0</green>
+   <blue>0.0</blue>
+   <factor-prop>sim/model/material/instruments/factor</factor-prop>
+  </emission>
+ </animation>
+
+  <animation>
+   <type>pick</type>
+   <object-name>down-elev-trim</object-name>
+   <visible type="bool">false</visible>
+   <action>
+     <name>Elevator Trim down</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/elevator-trim</property>
+      <step>0.00125</step>
+     </binding>
+   </action>
+  </animation>
+
+  <animation>
+   <type>pick</type>
+   <object-name>up-elev-trim</object-name>
+   <visible type="bool">false</visible>
+   <action>
+     <name>Elevator Trim up</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/elevator-trim</property>
+       <step>-0.00125</step>
+     </binding>
+   </action>
+  </animation>
+     
+ <animation>
+  <type>rotate</type>
+  <object-name>trim-handle</object-name>
+  <object-name>trim-knob</object-name>
+  <property>controls/flight/elevator-trim</property>
+  <factor>2500</factor>
+  <center>
+   <x-m>0.065</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.03</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>-1</z>
+  </axis>
+ </animation>
+
+<animation>
+ <type>translate</type>
+  <object-name>sphere</object-name>
+  <property>controls/flight/elevator-trim</property>
+  <offset-m>0.0075</offset-m>
+  <factor>0.03</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>  
+</animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>mapLightClick</object-name>
+   <visible type="bool">true</visible>
+   <action>
+     <name>ToggleMapLight</name>
+     <button>0</button>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/map-lights</property>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <name>MapLightSW</name>
+  <type>translate</type>
+  <object-name>mapLightSwitch</object-name>
+  <property>controls/switches/map-lights</property>
+  <factor>0.01</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+  
+ <animation>
+  <type>material</type>
+  <object-name>map-light</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>controls/lighting/map-lights</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>cabinLightClick</object-name>
+   <visible type="bool">true</visible>
+   <action>
+     <name>ToggleCabinLight</name>
+     <button>0</button>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/cabin-lights</property>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <name>CabinLightSW</name>
+  <type>translate</type>
+  <object-name>cabinLightSwitch</object-name>
+  <property>controls/switches/cabin-lights</property>
+  <factor>0.01</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>cabin-light</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>controls/lighting/cabin-lights</factor-prop>
+  </emission>
+ </animation>
+
+</PropertyList>
+
+

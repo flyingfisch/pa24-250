@@ -1,0 +1,14 @@
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name>Red Stripe</name>
+                <texture-fuse>Liveries/redstripe/fuse.png</texture-fuse>
+                <texture-wing>Liveries/redstripe/wing.png</texture-wing>
+                <texture-tail>Liveries/redstripe/tail.png</texture-tail>
+                <texture-headliner>Liveries/redstripe/headliner.png</texture-headliner>
+                <texture-seats>Liveries/redstripe/seats.png</texture-seats>
+            </livery>
+        </model>
+    </sim>
+</PropertyList>

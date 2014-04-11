@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+    <path>MarkerBeacons.ac</path>
+    <animation>
+      <type>material</type>
+      <object-name>OM-light</object-name>
+      <emission>
+       <red>0.0</red>
+       <green>0.255</green>
+       <blue>0.612</blue>
+       <factor-prop>instrumentation/marker-beacon/outer</factor-prop>
+      </emission>
+    </animation>
+    <animation>
+      <type>material</type>
+      <object-name>MM-light</object-name>
+      <emission>
+       <red>0.902</red>
+       <green>0.467</green>
+       <blue>0.0</blue>
+       <factor-prop>instrumentation/marker-beacon/middle</factor-prop>
+      </emission>
+    </animation>
+    <animation>
+      <type>material</type>
+      <object-name>IM-light</object-name>
+      <emission>
+       <red>1.0</red>
+       <green>1.0</green>
+       <blue>1.0</blue>
+       <factor-prop>instrumentation/marker-beacon/inner</factor-prop>
+      </emission>
+    </animation>
+</PropertyList>

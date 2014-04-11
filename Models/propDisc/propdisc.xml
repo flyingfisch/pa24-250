@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+
+ <path>fastprop.ac</path>
+ <nopreview/>
+ 
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>noshadow.PropellerDisk</object-name>
+ </effect>
+
+ <animation>
+  <name>PropVisibility</name>
+  <type>material</type>
+  <object-name>noshadow.PropellerDisk</object-name>
+  <transparency>
+   <alpha>0.10</alpha>
+   <factor-prop>/sim/model/material/propdisc/factor</factor-prop>
+  </transparency>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>noshadow.PropellerDisk</object-name>
+  <condition>
+    <greater-than>
+     <property>engines/engine[0]/rpm</property>
+     <value>350</value>
+    </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>noshadow.PropellerDisk</object-name>
+  <property>/engines/engine[0]/rpm</property>
+  <factor>-0.5</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

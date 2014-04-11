@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+
+<!--
+Digital OAT display for pa24 (on left pilot window)
+Dave Perry
+December 28, 2006
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+
+ <name>OAT_digital</name>
+ <w-base>128</w-base>
+ <h-base>128</h-base>
+
+ <layers>
+  <layer>
+   <name>deg-C-display</name>
+   <condition>
+    <equals>
+     <property>/controls/switches/oat-switch</property>
+     <value>1</value>
+    </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <font>led</font>
+   <point-size>6</point-size>
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property>/environment/temperature-degc</property>
+     <format>%4.1f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-20</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>5</offset>
+    </transformation>
+   </transformations>
+  </layer>
+ 
+  <layer>
+   <name>C-display</name>
+   <condition>
+    <equals>
+     <property>/controls/switches/oat-switch</property>
+     <value>1</value>
+    </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <font>led</font>
+   <point-size>6</point-size>
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>C</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>27</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>5</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>deg-F-display</name>
+   <condition>
+    <equals>
+     <property>/controls/switches/oat-switch</property>
+     <value>2.0</value>
+    </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <font>led</font>
+   <point-size>6</point-size>
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property>/environment/temperature-degf</property>
+     <format>%4.1f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-20</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>5</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+  <layer>
+   <name>F-display</name>
+   <condition>
+    <equals>
+     <property>/controls/switches/oat-switch</property>
+     <value>2.0</value>
+    </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <font>led</font>
+   <point-size>6</point-size>
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>F</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>27</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>5</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+  <layer>
+   <name>deg-symbol</name>
+   <condition>
+     <property>/controls/switches/oat-switch</property>
+     <equals>
+      <property>sim/current-view/view-number</property>
+      <value>0</value>
+     </equals>
+   </condition>
+   <type>text</type>
+   <font>led</font>
+   <point-size>4</point-size>
+   <color>
+    <red>0</red>
+    <green>0</green>
+    <blue>0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>o</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>20</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>10</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+ </layers>
+</PropertyList>

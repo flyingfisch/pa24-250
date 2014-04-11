@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+  <PropertyList> 
+  <help>
+   <title>Piper Comanche 250</title>
+    <key> 
+     <name>s</name>
+     <desc>Start</desc>
+   </key>
+   <key>
+    <name>f</name>
+    <desc>fuel tank select</desc>
+   </key>
+   <key>
+    <name>!</name>
+    <desc>toggle master switch</desc>
+   </key>
+   <key>
+    <name>@</name>
+    <desc>toggle fuel pump</desc>
+   </key>
+   <key>
+    <name>#</name>
+    <desc>turn on nav lights; turn on and/or dim panel lights</desc>
+   </key>
+   <key>
+    <name>3</name>
+    <desc>increase and/or turn off panel lights and nav lights</desc>
+   </key>
+   <key>
+    <name>$</name>
+    <desc>toggle landing lights</desc>
+   </key>
+   <key>
+    <name>%</name>
+    <desc>toggle turn and bank</desc>
+   </key>
+   <key>
+    <name>^</name>
+    <desc>toggle rotating beacon</desc>
+   </key>
+   <key>
+    <name>*</name>
+    <desc>toggle pitot heat</desc>
+   </key>
+   <key>
+    <name>(</name>
+    <desc>toggle strobe lights</desc>
+   </key>
+   <key>
+    <name>)</name>
+    <desc>toggle avionics master</desc>
+   </key>
+   <key>
+    <name>h</name>
+    <desc>toggle carburator heat</desc>
+   </key>
+   <key>
+    <name>ctrl-P</name>
+    <desc>toggle primer pump</desc>
+   </key>
+   <key>
+    <name>B</name>
+    <desc>toggle parking brake</desc>
+   </key>
+   <key>
+    <name>s</name>
+    <desc>starter</desc>
+   </key>
+
+      <line>All switches and controls (except yoke and pedals) can be operated via "hot-spots"</line>
+      <line>Type Ctrl-C to display mouse "hot-spots"</line>
+      <line></line>
+      <line>Start Routine</line>
+      <line> 1. fuel on most full main ("f" toggles selector between seats)</line>
+      <line> 2. avionics master and all other toggles OFF</line>
+      <line> 3. master switch to ON ("!" toggles master switch)</line>
+      <line> 4. electric fuel pump ON ("@" toggles fuel pump switch)</line>
+      <line> 5. operate primer pump three times then locked (ctrl-P cycles primer)</line>
+      <line> 6. "CLEAR PROP"</line>
+      <line> 7. key to start ("s" engages starter)</line>
+      <line> 8. turn and bank ON ("%" toggles tc switch)</line>
+      <line> 9. pitot heat ON if IFR ("*" toggles pitot heat switch)</line>
+      <line>10. avionics master ON (")" toggles avionics master)</line>
+      <line>11. beacon, nav lights, strobe lights ON as required</line>
+      <line>12. release parking brake ("B" releases brake)</line>
+      <line></line>
+      <line>Take-Off Check List on Panel</line>
+      <line></line>
+      <line>Landing Check List on Panel</line>
+  </help>
+
+  </PropertyList>

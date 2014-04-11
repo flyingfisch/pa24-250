@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+  <path>OAT.ac</path>
+
+  <panel>
+   <path>Aircraft/pa24-250/Panel/oat-panel.xml</path>
+   <bottom-left>
+    <x-m>0</x-m>
+    <y-m>-0.000</y-m>
+    <z-m>0</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>-0.05</x-m>
+    <y-m>-0.000</y-m>
+    <z-m>0</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>0</x-m>
+    <y-m>0.010</y-m>
+    <z-m>0.05</z-m>
+   </top-left>
+  </panel>
+
+  <animation>
+   <type>pick</type>
+   <object-name>click</object-name>
+   <visible type="bool">true</visible>
+   <action>
+     <name>OAT switch</name>
+     <button>0</button>
+     <binding>
+       <command>nasal</command>
+       <script>pa24.oat_switch()</script>
+     </binding>
+   </action>
+  </animation>
+
+  <animation>
+   <type>material</type>
+    <object-name>window_base</object-name>
+    <object-name>click</object-name>
+    <emission>
+     <red>0.2</red>
+     <green>0.04</green>
+     <blue>0.00002</blue>
+     <factor-prop>sim/model/material/instruments/factor</factor-prop>
+    </emission>
+  </animation> 
+
+</PropertyList>

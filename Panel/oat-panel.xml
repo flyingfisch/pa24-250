@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>OAT-Panel</name>
+<background>Aircraft/pa24-250/Panel/transparent-bg.rgb</background>
+ <w>128</w>
+ <h>128</h>
+<instruments>
+  <instrument include="../Models/oat/oat.xml">
+   <name>Digital OAT</name>
+   <x>0</x>
+   <y>0</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+</instruments>
+
+</PropertyList>

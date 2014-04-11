@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+
+ <model>
+  <name>base</name>
+  <path>Aircraft/pa24-250/Models/pa24-250-base-model.xml</path>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>AP-Mode</name>
+  <path>Aircraft/Instruments-3d/Century-IIB/AutopilotMode.xml</path>
+  <offsets>
+   <x-m>2.1664</x-m>
+   <y-m>-0.5025</y-m>
+   <z-m>0.2146</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>Century-IIB</name>
+  <path>Aircraft/Instruments-3d/Century-IIB/Century-IIB.xml</path>
+  <offsets>
+   <x-m>2.1664</x-m>
+   <y-m>-0.496</y-m>
+   <z-m>0.1257</z-m> 
+  </offsets>
+ </model>
+
+</PropertyList>

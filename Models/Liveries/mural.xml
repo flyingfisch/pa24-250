@@ -1,0 +1,14 @@
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name>Mural</name>
+                <texture-fuse>Liveries/mural/fuse.png</texture-fuse>
+                <texture-wing>Liveries/mural/wing.png</texture-wing>
+                <texture-tail>Liveries/mural/tail.png</texture-tail>
+                <texture-headliner>Liveries/mural/headliner.png</texture-headliner>
+                <texture-seats>Liveries/mural/seats.png</texture-seats>
+            </livery>
+        </model>
+    </sim>
+</PropertyList>

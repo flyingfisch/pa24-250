@@ -1,0 +1,486 @@
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+ <sim>
+
+  <!-- Use the YASim physics engine for the flight model -->
+
+  <flight-model archive="y">yasim</flight-model>
+  <aero archive="y">pa24-250</aero>
+
+  <startup>
+   <splash-texture>Aircraft/pa24-250/pa24-250splash.png</splash-texture>
+  </startup>
+
+  <!-- For now, use the Cessna 172 sound configuration (same engine) -->
+
+  <sound>
+   <path archive="y">Aircraft/pa24-250/pa24-250-sound.xml</path>
+  </sound>
+
+
+  <panel>
+   <visibility archive="y">false</visibility>
+  </panel>
+
+
+  <!-- Set the pilot's view position x/y/z == right/up/back-->
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">-0.29143</x-offset-m> 
+     <y-offset-m archive="y">0.48219</y-offset-m>   
+     <z-offset-m archive="y">2.71663</z-offset-m>   
+     <pitch-offset-deg>-15</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <menubar>
+      <default>
+          <menu n="10">
+              <label>Comanche</label>
+              <enabled type="bool">true</enabled>
+              <item>
+                <name>livery</name>
+                <label>Select Livery</label>
+                <binding>
+                  <command>nasal</command>
+                  <script>
+                    aircraft.livery.dialog.open();
+                  </script>
+                </binding>
+              </item>
+
+              <item>
+                 <label>Immatriculation</label>
+                 <binding>
+                   <command>nasal</command>
+                   <script>pa24.immat_dialog.toggle()</script>
+                 </binding>
+               </item>
+
+              <item>
+                  <label>Show/hide yoke</label>
+                  <binding>
+                      <command>property-toggle</command>
+                      <property>/sim/model/hide-yoke</property>
+                  </binding>
+              </item>
+              <item>
+                  <label>Open/close Front door</label>
+                  <binding>
+                      <command>nasal</command>
+                      <script>
+                           pa24.rightDoor.toggle();
+                      </script>
+                  </binding>
+              </item>
+              <item>
+                  <label>Open/close Baggage door</label>
+                  <binding>
+                      <command>nasal</command>
+                      <script>
+                          pa24.baggageDoor.toggle();
+                      </script>
+                  </binding>
+              </item>
+              <item>
+                  <label>Load/Remove Baggage</label>
+                  <binding>
+                      <command>nasal</command>
+                      <script>
+                          pa24.baggageToggle();
+                      </script>
+                  </binding>
+              </item>
+          </menu>
+      </default>
+  </menubar>
+
+  <weight n="0">
+    <name>Pilot</name>
+    <weight-lb>200</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="1">
+    <name>Copilot</name>
+    <weight-lb>150</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="2">
+    <name>Left Passenger</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="3">
+    <name>Right Passenger</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="4">
+    <name>Baggage</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>200</max-lb>
+  </weight>
+
+
+ </sim>
+
+ <!-- Allow the attitude indicator to tumble -->
+
+ <instrumentation>
+  <attitude-indicator>
+   <config>
+    <tumble-flag>true</tumble-flag>
+   </config>
+  </attitude-indicator>
+  <encoder>
+   <serviceable type="bool">true</serviceable>
+  </encoder>
+ </instrumentation>
+
+
+ <!-- Start with trims set for take-off and
+
+	ITEM		STATE	Toggle	Hot
+				Key 	SPOT 
+	Master  	Off	"!"	Y		
+	Fuel Pump	Off	"@"	Y
+	Nav Lights	Off	"#"	Y
+	Landing Lights	Off	"$"	Y
+	Turn & Bank	Off	"%"	Y
+	Rot Beacon	Off	"^"	Y
+	Pitot Heat	Off	"*"	Y
+	Strobe Lights	Off	"("	Y
+	Avionics Master Off	")"	Y
+
+	Magnetos	Off		Y
+	Starter		Off		Y
+	Fuel Selector	Off	"f"	N
+					 -->
+ <gear>
+  <gear n="0">
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+   <caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+  </gear>
+  <gear n="1">
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+  </gear>
+  <gear n="2">
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+  </gear>
+ </gear>
+
+ <controls>
+  <engines>
+   <engine>
+    <fuel-pump type="bool">0</fuel-pump>		<!-- fuel-pump off 		-->
+    <primer-pump type="double">0</primer-pump>		<!-- primer locked		-->
+    <rpm>0</rpm>    
+    <magnetos>0</magnetos>
+   </engine>
+  </engines>
+  <gear>
+   <brake-parking type="double">1</brake-parking>	<!--  parking brake set 	-->
+  </gear>
+  <electric>
+   <battery-switch type="bool">0</battery-switch>	<!--  master switch off 	-->
+  </electric>
+  <lighting>
+   <nav-lights type="bool">0</nav-lights>		<!--  nav lights off 		-->
+   <landing-lights type="bool">0</landing-lights>
+   <beacon type="bool">0</beacon>			<!--  rotating beacon off 	-->
+   <strobe type="bool">0</strobe>			<!--  strobe lights off 	-->
+  </lighting>
+  <anti-ice>
+   <pitot-heat type="bool">0</pitot-heat>		<!--  pitot heat off 		-->
+  </anti-ice>
+  <flight>
+   <aileron-trim>0.05</aileron-trim>
+   <elevator-trim>-0.25</elevator-trim>  		<!--  tab set for takeoff	-->
+   <rudder-trim>-0.048</rudder-trim>
+  </flight>
+  <switches>
+   <master-avionics type="bool">0</master-avionics>	<!--  avionics master off	-->
+  </switches>
+ </controls>
+ <instrumentation>
+  <turn-indicator>
+   <serviceable type="bool">0</serviceable>		<!--  turn & bank off		-->
+  </turn-indicator>
+ </instrumentation>
+
+ <!-- Start with both main tanks completely full and fuel selector off.
+      The Comanche modeled has one fuel quantity gage which displays
+      the fraction of fuel in the selected tank.  This is acurately
+      modeled, so only one tank should be selected at a time. 
+      Use keyboard "f" nasal binding to switch tanks; this cycles through
+      the tanks in order Right Main, Right Aux, Left Aux, Left Main, and 
+      finally Off.  In the off position or with an empty tank selected,
+      the engine quits.
+-->
+
+ <controls> 
+  <fuel>
+   <switch-position type = "int">0</switch-position>
+    <tank n="0">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+    <tank n="1">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+    <tank n="2">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+    <tank n="3">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+  </fuel>
+ </controls> 
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <name>RightMain</name>
+    <level-gal_us>28.0</level-gal_us>
+    <selected>false</selected>
+   </tank>
+   <tank n="1">
+    <name>RightAux</name>
+    <level-gal_us>15.0</level-gal_us>
+    <selected>false</selected>
+   </tank>
+   <tank n="2">
+    <name>LeftAux</name>
+    <level-gal_us>15.0</level-gal_us>
+    <selected>false</selected>
+  </tank>
+   <tank n="3">
+    <name>LeftMain</name>
+    <level-gal_us>28.0</level-gal_us>
+    <selected>false</selected>
+   </tank>
+  </fuel>
+ </consumables>
+
+ <input>
+  <keyboard>
+   <key n="102">
+   <name>f</name>
+   <desc>fuel tank select</desc>
+   <binding>
+    <command>nasal</command>
+     <script>pa24.fuel_switch(1)</script>
+   </binding>
+   </key>
+   
+  <key n="33">
+  <name>!</name>
+  <desc>Toggle Master Switch</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.master_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="64">
+  <name>@</name>
+  <desc>Toggle Fuel Pump</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.f_pump_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="35">
+  <name>#</name>
+  <desc>Increase Panel Lights</desc>
+  <repeatable>true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.panel_light_switch(1)</script>
+  </binding>
+  </key> 
+
+  <key n="51">
+  <name>3</name>
+  <desc>Decrease Panel Lights</desc>
+  <repeatable>true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.panel_light_switch(-1)</script>
+  </binding>
+  </key> 
+
+  <key n="36">
+  <name>$</name>
+  <desc>Toggle Landing Lights</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.landing_light_switch_both()</script>
+  </binding>
+  </key> 
+
+  <key n="37">
+  <name>%</name>
+  <desc>Toggle Turn+Bank</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.turn_bank_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="94">
+  <name>^</name>
+  <desc>Toggle Rotating Beacon</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.rot_beacon_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="42">
+  <name>*</name>
+  <desc>Toggle Pitot Heat</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.pitot_heat_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="40">
+  <name>(</name>
+  <desc>Toggle Strobe Lights</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.strobe_light_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="41">
+  <name>)</name>
+  <desc>Toggle Avionics Master</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.avionics_master_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="104">
+  <name>h</name>
+  <desc>Toggle Carb Heat</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.carb_heat()</script>
+  </binding>
+  </key> 
+
+  <key n="16">
+  <name>ctrl-P</name>
+  <desc>Toggle Prime Pump</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.primer()</script>
+  </binding>
+  </key> 
+
+  <key n="115">
+  <name>s</name>
+  <desc>Toggle Starter Switch</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>/controls/switches/starter</property>
+     <value >1</value>
+   </binding>
+   <mod-up>
+     <binding>
+       <command>property-assign</command>
+       <property>/controls/switches/starter</property>
+       <value>0</value>
+     </binding>
+   </mod-up>
+  </key>
+
+</keyboard> 
+
+</input>
+
+<nasal>
+
+  <pa24>
+    <file>Aircraft/pa24-250/Nasal/pa24.nas</file>
+    <file>Aircraft/pa24-250/Nasal/pa24-electrical.nas</file>
+    <file>Aircraft/pa24-250/Nasal/action-sim.nas</file>
+    <file>Aircraft/pa24-250/Nasal/doors.nas</file>
+    <file>Aircraft/Instruments-3d/ki266/ki266.nas</file>
+    <file>Aircraft/pa24-250/Nasal/livery.nas</file>
+    <!--<file>Aircraft/pa24-250/Nasal/immat.nas</file>-->
+  </pa24>
+  <kr87>
+    <file>Aircraft/pa24-250/Nasal/kr87.nas</file>
+  </kr87>
+  <tyresmoke>
+    <file>Aircraft/pa24-250/Nasal/tyresmoke.nas</file>
+  </tyresmoke>
+
+</nasal>
+
+</PropertyList>
+

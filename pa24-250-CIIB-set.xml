@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Aircraft configuration file: Piper Comanche 250 (1962 model)
+This file contains configuration unique to the Century IIB autopilot.
+
+Configuration items common to either the Century IIB or the Century III 
+autopilots are in the file "pa24-250-baxe.xml included below.  This file
+configures the airplane with full fuel, a 200 lb pilot, anda 150 lb 
+copilot and no bagage.
+************************************************************************
+-->
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList include="pa24-250-base.xml">
+
+ <sim include="help.xml">
+
+  <description>Piper Comanche 250, CIIB autopilot</description>
+  <author>Dave Perry</author>
+  <status>production</status>
+
+  <systems>
+   <autopilot>
+      <name>autopilot helpers</name>
+      <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+   </autopilot>
+   <autopilot>
+     <path>Aircraft/pa24-250/Systems/CENTURYIIB.xml</path>
+   </autopilot>
+   <autopilot>
+     <name>FiltersOnly</name>
+     <path>Aircraft/c172p/Systems/NAVandGSfilters.xml</path>
+   </autopilot>
+   <electrical>
+     <path></path>
+   </electrical>
+  </systems> 
+
+  <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
+
+  <model>
+   <path archive="y">Aircraft/pa24-250/Models/pa24-250-CIIB.xml</path>
+   <hide-yoke>false</hide-yoke>
+  </model>
+
+ </sim>
+
+<nasal>
+
+  <CenturyIIB>
+    <file>Aircraft/Generic/century2b.nas</file>
+  </CenturyIIB>
+
+</nasal>
+
+</PropertyList>
+
+<!-- end of pa24-250-CIIB-set.xml -->

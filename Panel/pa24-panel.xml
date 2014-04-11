@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>pa24-Panel</name>
+ <background>Aircraft/pa24-250/Panel/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+
+<instruments>
+
+<instrument>
+  <name>panel hotspots</name>
+  <x>512</x>
+  <y>384</y>
+  <w>1024</w>
+  <h>768</h>
+  <w-base>1024</w-base>
+  <h-base>768</h-base>
+
+ <actions> 
+   
+   <action>
+     <name>master switch</name>
+     <button>0</button>
+     <x>-405</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+   <command>nasal</command>
+   <script>pa24.master_switch()</script>
+     </binding>
+   </action>
+   
+   <action>
+     <name>fuel pump</name>
+     <button>0</button>
+     <x>-373</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+       <command>nasal</command>
+       <script>pa24.f_pump_switch()</script>
+     </binding>
+   </action>
+
+   <action>
+     <name>increase panel lights</name>
+     <button>0</button>
+     <x>-338</x>
+     <y>-190</y>
+     <w>8</w>
+     <h>32</h>
+     <repeatable>true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>pa24.panel_light_switch(1)</script>
+     </binding>
+   </action>   
+
+   <action>
+     <name>decrease panel lights</name>
+     <button>0</button>
+     <x>-345</x>
+     <y>-190</y>
+     <w>8</w>
+     <h>32</h>
+     <repeatable>true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>pa24.panel_light_switch(-1)</script>
+     </binding>
+   </action>   
+
+   <action>
+     <name>ParkingBrake</name>
+     <button>0</button>
+     <x>-335</x>
+     <y>-158</y>
+     <w>16</w>
+     <h>59</h>
+     <binding>
+      <command>nasal</command>
+      <script>controls.applyParkingBrake(1)</script>
+     </binding>
+   </action>   
+
+   <action>
+     <name>landing light-L</name>
+     <button>0</button>
+     <x>-325</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+   <command>nasal</command>
+   <script>pa24.landing_light_switch_left()</script>
+     </binding>
+   </action>
+
+   <action>
+     <name>landing light-R</name>
+     <button>0</button>
+     <x>-293</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+   <command>nasal</command>
+   <script>pa24.landing_light_switch_right()</script>
+     </binding>
+   </action>
+
+   <action>
+     <name>turn bamk</name>
+     <button>0</button>
+     <x>-261</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+   <command>nasal</command>
+   <script>pa24.turn_bank_switch()</script>
+     </binding>
+   </action>
+
+   <action>
+     <name>rotating beacon</name>
+     <button>0</button>
+     <x>-229</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+       <command>nasal</command>
+       <script>pa24.rot_beacon_switch()</script>
+     </binding>
+   </action>
+
+
+   <action>
+     <name>pitot heat</name>
+     <button>0</button>
+     <x>-195</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+   <command>nasal</command>
+   <script>pa24.pitot_heat_switch()</script>
+     </binding>
+   </action>
+
+   <action>
+     <name>strobe lights</name>
+     <button>0</button>
+     <x>192</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+       <command>nasal</command>
+       <script>pa24.strobe_light_switch()</script>
+     </binding>
+   </action>
+
+
+   <action>
+     <name>avionics master</name>
+     <button>0</button>
+     <x>228</x>
+     <y>-193</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+   <command>nasal</command>
+   <script>pa24.avionics_master_switch()</script>
+     </binding>
+   </action>   
+
+   <action>
+     <name>carb heat</name>
+     <button>0</button>
+     <x>101</x>
+     <y>-200</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+   <command>nasal</command>
+   <script>pa24.carb_heat()</script>
+     </binding>
+   </action>   
+
+   <action>
+    <name>Increase Mixture</name>
+    <button>0</button>     <x>-58</x>
+     <y>-224</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjMixture(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Mixture</name>
+    <button>0</button>     <x>-42</x>
+     <y>-320</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjMixture(-1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Increase Throttle</name>
+    <button>0</button>     <x>-10</x>
+     <y>-224</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjThrottle(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Throttle</name>
+    <button>0</button>     <x>6</x>
+     <y>-320</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjThrottle(-1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Increase Prop RPM</name>
+    <button>0</button>     <x>48</x>
+     <y>-224</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjPropeller(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Prop RPM</name>
+    <button>0</button>     <x>64</x>
+     <y>-320</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjPropeller(-1)</script>
+    </binding>
+   </action>
+
+   <action>
+     <name>flaps up</name>
+     <button>0</button>
+     <x>101</x>
+     <y>-330</y>
+     <w>24</w>
+     <h>32</h>
+    <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(-1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>   
+
+   <action>
+     <name>flaps down</name>
+     <button>0</button>
+     <x>101</x>
+     <y>-362</y>
+     <w>24</w>
+     <h>32</h>
+    <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>   
+
+   <action>
+     <name>left rudder trim</name>
+     <button>0</button>
+     <x>134</x>
+     <y>-384</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/rudder-trim</property>
+      <step>-0.001</step>
+     </binding>
+   </action>   
+
+   <action>
+     <name>right rudder trim</name>
+     <button>0</button>
+     <x>150</x>
+     <y>-384</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/rudder-trim</property>
+      <step>0.001</step>
+     </binding>
+   </action>   
+
+
+<!--		ASI Pressure Altitude adjust  -->
+   <action>
+     <name>small decrease</name>
+     <button>0</button>
+     <x>-366.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large decrease</name>
+     <button>1</button>
+     <x>-366.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+    <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>-5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>small increase</name>
+     <button>0</button>
+     <x>-358.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large increase</name>
+     <button>1</button>
+     <x>-358.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+ 
+
+		magneto switch		
+
+   <action>
+     <name>decrease mags</name>
+     <button>0</button>
+     <x>-156.0</x>
+     <y>-210</y>
+     <w>8</w>
+     <h>40</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+
+   <action>
+     <name>increase mags</name>
+     <button>0</button>
+     <x>-147.5</x>
+     <y>-210</y>
+     <w>8</w>
+     <h>40</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+
+		Starter		
+   <action>
+     <name>starter</name>
+     <button>0</button>
+     <x>-138.5</x>
+     <y>-210</y>
+     <w>8</w>
+     <h>40</h>
+   <binding>
+     <command>property-assign</command>
+     <property>/controls/switches/starter</property>
+     <value >1</value>
+   </binding>
+   <mod-up>
+     <binding>
+       <command>property-assign</command>
+       <property>/controls/switches/starter</property>
+       <value>0</value>
+     </binding>
+   </mod-up>
+   </action>
+
+   <action>
+    <name>Gear up</name>
+    <button>0</button>
+    <x>-156.5</x>
+    <y>-73</y>
+    <w>20</w>
+    <h>40</h>
+    <repeatable>false</repeatable>
+    <binding>
+     <command>nasal</command>
+     <script>controls.gearDown(-1)</script>
+    </binding>
+    <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.gearDown(0)</script>
+     </binding>
+    </mod-up>
+   </action>
+
+   <action>
+    <name>Gear down</name>
+    <button>0</button>
+    <x>-156.5</x>
+    <y>-113</y>
+    <w>20</w>
+    <h>40</h>
+    <repeatable>false</repeatable>
+    <binding>
+     <command>nasal</command>
+     <script>controls.gearDown(1)</script>
+    </binding>
+    <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.gearDown(0)</script>
+     </binding>
+    </mod-up>
+   </action>
+
+  </actions>
+
+ </instrument>
+
+</instruments>
+
+</PropertyList>

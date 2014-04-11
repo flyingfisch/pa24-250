@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+
+ <path>FlapsTrim.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>FlapSwHousing</object-name>
+  <object-name>FlapSwitch</object-name>
+  <object-name>NoseTrimInd</object-name>
+  <object-name>RudderTrim</object-name>
+  <object-name>TrimHousing</object-name>
+  <emission>
+   <red>0.225</red>
+   <green>0.045</green>
+   <blue>0.000005</blue>
+   <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>NoseTrimLeft</object-name>
+   <visible>false</visible>
+   <action>
+     <name>left rudder trim</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/rudder-trim</property>
+       <step>-0.001</step>
+     </binding>
+   </action>   
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>NoseTrimRight</object-name>
+   <visible>false</visible>
+   <action>
+     <name>right rudder trim</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/rudder-trim</property>
+       <step>0.001</step>
+     </binding>
+   </action>   
+ </animation>
+
+<animation>
+ <type>translate</type>
+  <object-name>NoseTrimInd</object-name>
+  <property>/controls/flight/rudder-trim[0]</property>
+  <factor>0.03</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>  
+</animation>
+
+ <animation>
+  <name>NoseTrim</name>
+  <type>rotate</type>
+  <object-name>RudderTrim</object-name>
+  <property>/controls/flight/rudder-trim[0]</property>
+  <factor>1080</factor>
+  <center>
+   <x-m>0.06</x-m>
+   <y-m>0.0262</y-m>
+   <z-m>-0.0471</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>FlapsUp</object-name>
+   <visible>false</visible>
+   <action>
+     <name>Retract flaps</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(-1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>FlapsDn</object-name>
+   <visible>false</visible>
+   <action>
+     <name>Extend flaps</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>
+ </animation>
+
+ <animation>
+  <name>FlapSwitch</name>
+  <type>rotate</type>
+  <object-name>FlapSwitch</object-name>
+  <property>/controls/switches/flaps</property>
+  <factor>30</factor>
+  <center>
+   <x-m>0.04</x-m>
+   <y-m>0.03</y-m>
+   <z-m>0.03</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+  
+</PropertyList>
+
+

@@ -1,0 +1,14 @@
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name>Teal</name>
+                <texture-fuse>fuse_stripe.rgb</texture-fuse>
+                <texture-wing>wing2.rgb</texture-wing>
+                <texture-tail>tail.rgb</texture-tail>
+                <texture-headliner>headliner.rgb</texture-headliner>
+                <texture-seats>seats.rgb</texture-seats>
+            </livery>
+        </model>
+    </sim>
+</PropertyList>
