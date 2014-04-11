@@ -2,7 +2,7 @@ README
 ======
 
 For Developers
-==============
+--------------
 I have updated the entire plane, it now sports the following new features:
 
  * Livery support
@@ -11,14 +11,14 @@ I have updated the entire plane, it now sports the following new features:
 
 
 For Flyers
-==========
+----------
 Download the zip and extract it into your flightgear aircraft directory. Then rename the folder from `pa24-250 (master)` to `pa24-250`. You should be good to go!
 
 Legal
-=====
+-----
 This plane is licensed with the same license as was used by the original author (GNU GPL v2).
 
 Credits
-=======
+-------
 Everything except features stated above: Dave Perry
 Features stated above: flyingfisch
