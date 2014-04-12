@@ -103,6 +103,27 @@
       <line>Take-Off Check List on Panel</line>
       <line></line>
       <line>Landing Check List on Panel</line>
+      <line>Some V Speeds shown on panel, complete list below:</line>
+      <line>        MPH  KT</line>
+      <line>Vne:    227 197</line>
+      <line>Vno:    180 156</line>
+      <line>Vfe:    125 108</line>
+      <line>Vlo:    150 130</line>
+      <line>Va:     144 125</line>
+      <line>Vs:      71  62</line>
+      <line>Vso:     63  55</line>
+      <line>Vglide: 100  87</line>
+      <line>Vx:      85  74</line>
+      <line>Vy:     105  91</line>
+      <line>Vr:      74  85</line>
+      <line>App:     95  83</line>
+      <line>App</line>
+      <line>(flaps): 82  71</line>
+      <line>Enroute</line>
+      <line>climb:  120 104</line>
+      <line>Cruise (75%, 7000 ft): max MP, 2400 RPM (181 mph TAS, 157 KTAS)</line>
+      <line>Cruise (55%, 14,000 ft): max MP, 2400 RPM (163 mph TAS, 141 KTAS)</line>
+
   </help>
 
   </PropertyList>
