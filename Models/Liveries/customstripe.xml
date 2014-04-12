@@ -1,0 +1,14 @@
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name>Custom Gradient Stripe</name>
+                <texture-fuse>Liveries/customstripe/fuse.png</texture-fuse>
+                <texture-wing>Liveries/customstripe/wing.png</texture-wing>
+                <texture-tail>Liveries/customstripe/tail.png</texture-tail>
+                <texture-headliner>Liveries/customstripe/headliner.png</texture-headliner>
+                <texture-seats>Liveries/customstripe/seats.png</texture-seats>
+            </livery>
+        </model>
+    </sim>
+</PropertyList>
