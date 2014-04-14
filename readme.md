@@ -12,6 +12,7 @@ I have updated the entire plane, it now sports the following new features:
  * Livery support
  * Dark gray interior (If you don't like it, the old model is included as `Models/pa24-250.ac.bak`)
  * Added noise to the panel texture, and a V-Speeds chart on the center of the dashboard.
+ * Added some reflections
 
 Todo
 ----
