@@ -92,6 +92,22 @@
   <object-name>WindowGroup</object-name>
  </effect>
 
+ <!-- REFLECTION -->
+   <effect>
+     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+     <object-name>wing</object-name>
+     <object-name>LeftFlap</object-name>
+     <object-name>LeftAileron</object-name>
+     <object-name>RightFlap</object-name>
+     <object-name>RightAileron</object-name>
+     <object-name>AntiServoTab</object-name>
+     <object-name>Stabilator</object-name>
+     <object-name>fuselage</object-name>
+     <object-name>BaggageDoor</object-name>
+     <object-name>DoorExt</object-name>
+   </effect>
+
+
  <model>
   <name>COMP</name>
   <path>Aircraft/Instruments-3d/comp/comp.xml</path>
