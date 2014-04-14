@@ -16,6 +16,7 @@ I have updated the entire plane, it now sports the following new features:
 Todo
 ----
  * Add immatriculation support
+ * Add tutorials
 
 Legal
 -----
